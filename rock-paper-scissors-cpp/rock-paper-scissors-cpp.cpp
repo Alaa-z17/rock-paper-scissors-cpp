@@ -39,6 +39,29 @@ string WinnerName(enWinner Winner)
     string arrWinnerName[3] = { "Player1","Computer","No Winner" };
     return arrWinnerName[Winner - 1];
 }
+enWinner WhoWonTheRound(stRoundInfo RoundInfo)
+{
+    if (RoundInfo.Player1Choice == RoundInfo.ComputerChoice)
+        return enWinner::Draw;
+
+    switch (RoundInfo.Player1Choice)
+    {
+    case enGameChoice::Stone:
+        if (RoundInfo.ComputerChoice == enGameChoice::Paper)
+            return enWinner::Computer;
+        break;
+    case enGameChoice::Paper:
+        if (RoundInfo.ComputerChoice == enGameChoice::Scissors)
+            return enWinner::Computer;
+        break;
+    case enGameChoice::Scissors:
+        if (RoundInfo.ComputerChoice == enGameChoice::Stone)
+            return enWinner::Computer;
+        break;
+    }
+    return enWinner::Player1;
+}
+
 int main()
 {
    srand((unsigned)time(NULL));
