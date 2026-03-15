@@ -23,8 +23,14 @@ struct stGameResults
     enWinner GameWinner = enWinner::Draw;
     string WinnerName = "";
 };
+int RandomNumber(int From, int To)
+{
+    int randNum = rand() % (To - From + 1) + From;
+    return randNum;
+}
 
 int main()
 {
+   srand((unsigned)time(NULL));
     return 0;
 }
