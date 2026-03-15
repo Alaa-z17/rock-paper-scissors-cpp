@@ -28,7 +28,17 @@ int RandomNumber(int From, int To)
     int randNum = rand() % (To - From + 1) + From;
     return randNum;
 }
+string ChoiceName(enGameChoice Choice)
+{
+    string arrGameChoices[3] = { "Stone","Paper","Scissors" };
+    return arrGameChoices[Choice - 1];
+}
 
+string WinnerName(enWinner Winner)
+{
+    string arrWinnerName[3] = { "Player1","Computer","No Winner" };
+    return arrWinnerName[Winner - 1];
+}
 int main()
 {
    srand((unsigned)time(NULL));
