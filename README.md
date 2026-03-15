@@ -81,12 +81,14 @@ Ctrl + F5
 
 ```
 rock-paper-scissors-cpp/
-├── rock-paper-scissors-cpp.cpp   ← main source code
-├── rock-paper-scissors-cpp.slnx  ← VS solution file
-├── rock-paper-scissors-cpp.vcxproj
-├── rock-paper-scissors-cpp.vcxproj.filters
 ├── .gitignore
-└── README.md
+├── README.md
+├── LICENSE
+├── rock-paper-scissors-cpp.slnx
+└── rock-paper-scissors-cpp/
+    ├── rock-paper-scissors-cpp.cpp
+    ├── rock-paper-scissors-cpp.vcxproj
+    └── rock-paper-scissors-cpp.vcxproj.filters
 ```
 
 ---
