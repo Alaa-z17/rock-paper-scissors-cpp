@@ -177,8 +177,39 @@ void ShowFinalGameResults(stGameResults GameResults)
     cout << Tabs(2) << "___________________________________________________________\n";
     SetWinnerScreenColor(GameResults.GameWinner);
 }
+short ReadHowManyRounds()
+{
+    short GameRounds = 1;
+    do
+    {
+        cout << "How Many Rounds 1 to 10 ?\n";
+        cin >> GameRounds;
+    } while (GameRounds < 1 || GameRounds > 10);
+    return GameRounds;
+}
+
+void ResetScreen()
+{
+    system("cls");
+    system("color 0F");
+}
+
+void StartGame()
+{
+    char PlayAgain = 'Y';
+    do
+    {
+        ResetScreen();
+        stGameResults GameResults = PlayGame(ReadHowManyRounds());
+        ShowGameOverScreen();
+        ShowFinalGameResults(GameResults);
+        cout << endl << Tabs(3) << "Do you want to play again? Y/N? ";
+        cin >> PlayAgain;
+    } while (PlayAgain == 'Y' || PlayAgain == 'y');
+}
 int main()
 {
    srand((unsigned)time(NULL));
+   StartGame();
     return 0;
 }
