@@ -76,6 +76,32 @@ enGameChoice GetComputerChoice()
 {
     return (enGameChoice)RandomNumber(1, 3);
 }
+void SetWinnerScreenColor(enWinner Winner)
+{
+    switch (Winner)
+    {
+    case enWinner::Player1:
+        system("color 2F");
+        break;
+    case enWinner::Computer:
+        system("color 4F");
+        cout << "\a";
+        break;
+    default:
+        system("color 6F");
+        break;
+    }
+}
+
+void PrintRoundResults(stRoundInfo RoundInfo)
+{
+    cout << "\n____________Round [" << RoundInfo.RoundNumber << "]____________\n\n";
+    cout << "Player1 Choice: " << ChoiceName(RoundInfo.Player1Choice) << endl;
+    cout << "Computer Choice: " << ChoiceName(RoundInfo.ComputerChoice) << endl;
+    cout << "Round Winner : [" << RoundInfo.WinnerName << "]\n";
+    cout << "__________________________________\n" << endl;
+    SetWinnerScreenColor(RoundInfo.Winner);
+}
 int main()
 {
    srand((unsigned)time(NULL));
