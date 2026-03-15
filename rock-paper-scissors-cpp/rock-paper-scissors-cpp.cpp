@@ -123,6 +123,32 @@ stGameResults FillGameResults(int GameRounds, short Player1WinTimes,
     GameResults.WinnerName = WinnerName(GameResults.GameWinner);
     return GameResults;
 }
+stGameResults PlayGame(short HowManyRounds)
+{
+    stRoundInfo RoundInfo;
+    short Player1WinTimes = 0, ComputerWinTimes = 0, DrawTimes = 0;
+
+    for (short GameRound = 1; GameRound <= HowManyRounds; GameRound++)
+    {
+        cout << "\nRound [" << GameRound << "] begins:\n";
+        RoundInfo.RoundNumber = GameRound;
+        RoundInfo.Player1Choice = ReadPlayer1Choice();
+        RoundInfo.ComputerChoice = GetComputerChoice();
+        RoundInfo.Winner = WhoWonTheRound(RoundInfo);
+        RoundInfo.WinnerName = WinnerName(RoundInfo.Winner);
+
+        if (RoundInfo.Winner == enWinner::Player1)
+            Player1WinTimes++;
+        else if (RoundInfo.Winner == enWinner::Computer)
+            ComputerWinTimes++;
+        else
+            DrawTimes++;
+
+        PrintRoundResults(RoundInfo);
+    }
+    return FillGameResults(HowManyRounds, Player1WinTimes, ComputerWinTimes, DrawTimes);
+}
+
 int main()
 {
    srand((unsigned)time(NULL));
