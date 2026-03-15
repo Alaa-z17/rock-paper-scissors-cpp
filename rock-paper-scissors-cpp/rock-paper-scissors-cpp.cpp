@@ -61,7 +61,21 @@ enWinner WhoWonTheRound(stRoundInfo RoundInfo)
     }
     return enWinner::Player1;
 }
+enGameChoice ReadPlayer1Choice()
+{
+    short Choice = 1;
+    do
+    {
+        cout << "\nYour Choice: [1]:Stone, [2]:Paper, [3]:Scissors? ";
+        cin >> Choice;
+    } while (Choice < 1 || Choice > 3);
+    return (enGameChoice)Choice;
+}
 
+enGameChoice GetComputerChoice()
+{
+    return (enGameChoice)RandomNumber(1, 3);
+}
 int main()
 {
    srand((unsigned)time(NULL));
