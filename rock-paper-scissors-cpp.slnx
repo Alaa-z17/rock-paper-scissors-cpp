@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="rock-paper-scissors-cpp/rock-paper-scissors-cpp.vcxproj" />
+</Solution>
