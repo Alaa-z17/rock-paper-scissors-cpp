@@ -5,6 +5,12 @@ core concepts of **Functional & Procedural Programming**.
 
 ---
 
+## 🎬 Video Walkthrough
+
+[![Rock Paper Scissors in C++](https://img.youtube.com/vi/jd8OObBa5_I/0.jpg)](https://youtu.be/jd8OObBa5_I)
+
+> Click the image above to watch the full project walkthrough on YouTube.
+
 ## 🎯 Learning Objectives
 
 - Structuring a program using functions (Procedural Programming)
